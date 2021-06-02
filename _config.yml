@@ -3,22 +3,24 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: Adi Prasetyo, AP programming
+subtitle: 'software engineer'
+description: 'professional duck-typer developer'
+keywords: 'adi prasetyo, adi p'
+author: Adi Prasetyo
+language: en,id
+timezone: 'Asia/Jakarta'
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://enter-rebel.github.io
+permalink: :lang/:title/:year/
 permalink_defaults:
+  lang: en
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -31,7 +33,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :lang/:title.md
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -62,11 +64,20 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 18
   order_by: -date
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 40
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
 # Category & Tag
-default_category: uncategorized
+default_category: writing
 category_map:
 tag_map:
 
@@ -95,10 +106,112 @@ exclude:
 ignore:
 
 # Extensions
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "uniqueString"
+search:
+  path: search.xml
+  field: post
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+music:
+  enable: false
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-
+theme: hexo-theme-matery
+theme_config:
+  googleAnalytics:
+    enable: true
+    id: G-TVF38M06ZZ #  unchecked
+  profile:
+    avatar: /res/ava_dark.png
+  myProjects:
+    data:
+      caraka:
+        icon: fas fa-database
+        iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
+        url: https://github.com/brutalcrozt
+        desc: medical check-up web app, sorry the project is private you can't
+          see it
+  mySkills:
+    data:
+      PHP:
+        background: 'linear-gradient(to right, #1b5ee0 0%, #0a47bd 100%)'
+        percent: 80%
+      Java:
+        background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
+        percent: 25%
+      JavaScript:
+        background: 'linear-gradient(to right, #073bc2 70%,  100%)'
+        percent: 0%
+      # HTML5:
+      #   background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
+      #   percent: 100%
+      SASS:
+        background: 'linear-gradient(to right, #151118 70%, #80DEEA 100%)'
+        percent: 4%
+      CoffeeScript:
+        background: 'linear-gradient(to right, #1714bb 70%, #0502a8 100%)'
+        percent: 20%
+      MySQL:
+        background: 'linear-gradient(to right, #e24a6a 0%, #c2072e 100%)'
+        percent: 80%
+covers:
+  enable: false
+  title: 'please dont cp here'
+  base_dir: '.covers'
+  manifestFileName: 'enter-covers.json'
+  include:
+    - keywords
+  tagsUrl: tag
+  categoriesUrl: category
+  compress: true
+  source:
+    categories:
+        data: _data/categories.yml
+        images: _covers/categories
+    tags:
+        data: _data/tags.yml
+        images: _covers/tags
+  templates:
+    page:
+      path: themes/theme1/layout/microbrowser-template/page.html
+      images:
+        logo: themes/theme1/source/assets/favicon/favicon-194x194.png
+        background: themes/theme1/layout/microbrowser-template/bg.svg
+      dimensions:
+        width: 964
+        height: 504
+      post:
+        path: themes/theme1/layout/microbrowser-template/post.html
+        images:
+          logo: themes/theme1/source/assets/favicon/favicon-194x194.png
+          background: themes/theme1/layout/microbrowser-template/bg.svg
+        dimensions:
+          width: 964
+          height: 504
+      category:
+        path: themes/theme1/layout/microbrowser-template/category.html
+        images:
+          logo: themes/theme1/source/assets/favicon/favicon-194x194.png
+          background: themes/theme1/layout/microbrowser-template/bg.svg
+        dimensions:
+          width: 964
+          height: 504
+      tag:
+        path: themes/theme1/layout/microbrowser-template/tag.html
+        images:
+          logo: themes/theme1/source/assets/favicon/favicon-194x194.png
+          background: themes/theme1/layout/microbrowser-template/bg.svg
+        dimensions:
+          width: 964
+          height: 504
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
