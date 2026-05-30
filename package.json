@@ -11,12 +11,11 @@
     "server": "hexo server --debug "
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "5.4.2"
   },
   "dependencies": {
     "hexo": "^5.0.0",
     "hexo-browsersync": "^0.3.0",
-    "hexo-covers": "^2.0.0",
     "hexo-filter-github-emojis": "^3.0.4",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
@@ -33,5 +32,8 @@
   },
   "devDependencies": {
     "cson": "^7.20.0"
+  },
+  "off": {
+    "hexo-covers": "^2.0.0"
   }
 }
